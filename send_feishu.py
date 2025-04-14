@@ -1,6 +1,10 @@
 import os
 import subprocess
 import requests
+import sys
+
+# 设置标准输出的编码为 UTF-8
+sys.stdout.reconfigure(encoding='utf-8')
 
 # 检查环境变量 FEISHU_WEBHOOK 是否存在
 feishu_webhook = os.getenv('FEISHU_WEBHOOK')
@@ -36,4 +40,4 @@ try:
     response = requests.post(feishu_webhook, json=data, headers=headers)
     response.raise_for_status()
 except requests.RequestException as e:
-    print(f"发送请求到飞书 Webhook 时出错: {e}")    
+    print(f"发送请求到飞书 Webhook 时出错: {e}")
