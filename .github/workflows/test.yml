@@ -38,8 +38,13 @@ jobs:
       run: |
           python -m pip install --upgrade pip
           pip install requests
-          
-    - name: Feishu Notify
+
+
+    - name: feishu notic
+      env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          GITHUB_SERVER_URL: ${{ github.server_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
       if: always()
-      #run: bash send_feishu.sh
       run: python send_feishu.py
