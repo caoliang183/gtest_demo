@@ -34,6 +34,11 @@ jobs:
           name: gtest-results
           path: build/Testing
 
+    - name: Install dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          
     - name: Feishu Notify
       if: always()
       #run: bash send_feishu.sh
