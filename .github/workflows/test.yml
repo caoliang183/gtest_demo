@@ -33,3 +33,7 @@ jobs:
       with:
           name: gtest-results
           path: build/Testing
+
+    - name: Feishu Notify
+      if: always()
+      run: bash send_feishu.sh
