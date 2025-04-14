@@ -39,7 +39,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-
     - name: feishu notic
       env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
