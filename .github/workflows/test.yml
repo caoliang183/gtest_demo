@@ -26,7 +26,7 @@ jobs:
     - name: Generate Test Report
       run: |
           cd build
-          ctest -T test --no-compress-output -j 8
+          ctest -T test --no-compress-output -C Debug -j 8
 
     - name: Upload Results
       uses: actions/upload-artifact@v4
