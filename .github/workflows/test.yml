@@ -21,12 +21,12 @@ jobs:
       run: cmake --build build --config Debug
 
     - name: Run tests
-      run: cd build && ctest --output-on-failure -C Debug -j 8
+      run: cd build && ctest --output-on-failure -C Debug -j 4
 
     - name: Generate Test Report
       run: |
           cd build
-          ctest -T test --no-compress-output -C Debug -j 8
+          ctest -T test --no-compress-output -C Debug -j 4
 
     - name: Upload Results
       uses: actions/upload-artifact@v4
